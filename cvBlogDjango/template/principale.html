@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="{% static 'styleCV.css' %}">
+        <title>CV de OUSSAMA TOUAOUSSA</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left_side">
+                <div class="profileText">
+                    <div class="imgBx">
+                        <img src="static/myImg.png">
+                    </div>
+                    <h2>Oussama Touaoussa
+                        <br><span style="width: 30px;
+                                    font-size: 18px;
+                                    font-weight: 100;">
+                            Elève ingénieur à centrale
+                            de Nantes. A la recherche d'un stage
+                            de fin d'étude en science
+                            des données. <br>Disponible dès avril 2022.</span>
+                    </h2>
+
+                </div>
+
+                <div class="contactInfo">
+                    <h3 class="title">Coordonnées</h3>
+                    <ul>
+                        <li>
+                            <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                            <span class="text">+33627586168</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <span class="text">oussama.Touaoussa@eleves.ec-nantes.fr</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span class="text">17 rue du Fresche Blanc,44300, Nantes</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                            <a style="text-decoration: none;" href='https://www.linkedin.com/in/oussama-touaoussa-7619a21a1' title='vous apprenez bcp'target="_blank"><span class="text"> @oussama-touaoussa</span></a>
+                            
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contactInfo">
+                    <h2 class="title">Compétences clés</h2>
+                    <ul>
+                        <li>
+                            <span class="text">Traitement et analyse des données
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Développement en Java, Python et Matlab</span>
+                        </li>
+                        <li>
+                            <span class="text">Administration des bases de données
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Méthode agile (SCRUM)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Développement front-end et back-end
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contactInfo education">
+                    <h3 class="title">Formations</h3>
+                        <ul>
+                            {% for formation in formations %}
+                            <a  href="formation">
+                            <li>
+                                <h5>{{formation.anneeDebut}} - {{formation.anneeFin}}</h5>
+                                <h4>
+                                    {{formation.description}}
+                                </h4>
+                                <h4>
+                                    {{formation.lieu}}
+                                </h4>
+                            </li>
+                            </a>
+                            {% endfor %}
+                            
+                        </ul>
+                </div>
+
+                <div class="contactInfo language">
+                    <h3 class="title">Langues</h3>
+                    <ul>
+                        <li>
+                            <span class="text">Français</span>
+                            <div class="percent">
+                                <div style="width: 98%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="text">Anglais</span>
+                            <div class="percent">
+                                <div style="width: 80%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="text">Espagnole</span>
+                            <div class="percent">
+                                <div style="width: 30%;"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="text">Arabe</span>
+                            <div class="percent">
+                                <div style="width: 100%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contactInfo">
+                    <h2 class="title">Centres d’Intérêt</h2>
+                    <ul>
+                        <li>
+                            <span class="icon"><i class="fa fa-gamepad" aria-hidden="true"></i></span>
+                            <span class="text">Gaming</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                            <span class="text">Design</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-road" aria-hidden="true"></i></span>
+                            <span class="text">Road-trip</span>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="right_side">
+                <div class="about">
+                    <h2 class="title2"> Profil professionnel</h2>
+                    <p>
+                        Jeune Data Scientist expérimenté offrant des
+                        compétences solides en analyse et traitement
+                        de données, en développement informatique
+                        et en évolution des tendances de l'IA. Proactif
+                        et engagé pour atteindre les objectifs en
+                        exploitant et analysant les données.
+
+                    </p>
+                </div>
+                <div class="about">
+                    <h2 class="title2">EXPÉRIENCES PROFESSIONNELLES</h2>
+                    {% for experience in experiences %}
+                            <div class="box">
+                                <div class="year_campany">
+                                    <h5 style="font-size: 10px;">{{experience.dateDebut}}-{{experience.dateFin}}</h5>
+                                    <h5>{{experience.nomEntreprise}}</h5>
+                                </div>
+                                <div class="text">
+                                    <h4>{{experience.role}}</h4>
+                                    <p>{{experience.description}}</p>
+                                </div>
+                            </div>
+                    {% endfor %}
+                    
+                </div>
+
+                <div class="about skills">
+                    <h2 class="title2">PROJETS PERSONNELS</h2>
+                    {% for projet in projets %}
+                    
+                        <h4 style = "
+                                text-transform: uppercase;
+                                color: #2a7da2;
+                                font-size: 16px;
+                                font-weight: bold;
+                                margin-top: 25px;">
+                            {{projet.nom}}
+                        </h4>
+                        <p>{{projet.description}}<a href={{projet.lienGithub}}>Lien vers github.</a></p>
+                    
+                    {% endfor %}
+                </div>
+
+                <div class="about skills">
+                    <h2 class="title2">DOMAINES DE CONNAISSANCES</h2>
+                    <div class="box">
+                        <h4>ML-DL</h4>
+                        <p>Conception des méthodes de machine-deep 
+                            learning avec Tenserflow, Keras, PyTorch et 
+                            Scikit-learn</p>
+                    </div>
+                    <div class="box">
+                        <h4>Web :</h4>
+                        <p>Django, Flask, Spring, Javascipt, Html et 
+                            CSS</p>
+                    </div>
+                    <div class="box">
+                        <h4>Date base :</h4>
+                        <p>SQL, 
+                            MongoDB, Cassandra</p>
+                    </div>
+                    <div class="box">
+                        <h4>Développement :</h4>
+                        <p>Python, Java, 
+                            Matlab</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+    </body>
+</html>
